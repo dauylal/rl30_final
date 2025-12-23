@@ -13,11 +13,17 @@ Download the humanml3d (ground truth), and our preference dataset.
 
 The file structure should look like
 ```bash
+unzip preference_data.zip
+unzip humanml3d.zip
+cp -r humanml3d VimoRAG/McDPO/
+```
+
+The file structure should look like
+```bash
 preference_data/
 VimoRAG/
 VimoRAG/McDPO/humanml3d
 InstructMotion/
-
 ```
 
 ## Stage 1 (Our models)
