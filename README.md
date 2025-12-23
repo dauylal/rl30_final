@@ -9,6 +9,11 @@ Follow the [VimoRAG](https://github.com/WalkerMitty/VimoRAG) repository to downl
 
 # Dataset and Models
 
+## Stage 0
+Download the humanml3d (ground truth), and our preference dataset.
+[humanml3d] ()
+[preference_dataset]()
+
 ## Stage 1 (Our models)
 - Download the dataset and models from [HuggingFace](https://huggingface.co/datasets/Haidong2/VimoRAG) (or [ModelScope](https://modelscope.cn/models/Walkerhai/VimoRAG)) and put them in ``data/``
 - Run
@@ -48,6 +53,33 @@ generate preference_motion.jsonl (For InstructMotion Training)
 ```bash
 # In VimoRAG/McDPO/
 python motion_text_score.py --dataset_mapping humanml3d_mapping.json --gt_motion_dir /home/michael/code/VimoRAG/McDPO/humanml3d/new_joint_vecs --output preference_motion.jsonl
+```
+
+Make sure you are out of VimoRAG environment
+```bash
+conda deactivate
+cd {root}/InstructionMotion
+```
+
+# Instruction Motion
+
+Set up environment according to [MotionGPT](https://github.com/OpenMotionLab/MotionGPT?tab=readme-ov-file#-quick-start) setup instructions below:
+```bash
+conda create python=3.10.6 --name mgpt
+conda activate mgpt
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+cd MotionGPT
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+bash prepare/download_smpl_model.sh
+bash prepare/prepare_t5.sh
+bash prepare/download_t2m_evaluators.sh
+bash prepare/download_pretrained_models.sh
+```
+
+To train the DPO model, modify the hyperparameters and paths in `src/scripts/dpo_train.sh` and run the following command (does not support distributed training):
+```bash
+bash src/scripts/dpo_train.sh
 ```
 
 
