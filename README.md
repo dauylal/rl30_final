@@ -11,8 +11,8 @@ Follow the [VimoRAG](https://github.com/WalkerMitty/VimoRAG) repository to downl
 
 ## Stage 0
 Download the humanml3d (ground truth), and our preference dataset.
-[humanml3d] ()
-[preference_dataset]()
+[humanml3d]()
+
 
 ## Stage 1 (Our models)
 - Download the dataset and models from [HuggingFace](https://huggingface.co/datasets/Haidong2/VimoRAG) (or [ModelScope](https://modelscope.cn/models/Walkerhai/VimoRAG)) and put them in ``data/``
