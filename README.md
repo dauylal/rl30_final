@@ -16,6 +16,7 @@ The file structure should look like
 unzip preference_data.zip
 unzip humanml3d.zip
 cp -r humanml3d VimoRAG/McDPO/
+cp -r preference_data InstructMotion/
 
 cd VimoRAG/McDPO
 ```
@@ -67,11 +68,12 @@ generate preference_motion.jsonl (For InstructMotion Training)
 
 ```bash
 # In VimoRAG/McDPO/
-python motion_text_score.py --dataset_mapping humanml3d_mapping.json --gt_motion_dir /home/michael/code/VimoRAG/McDPO/humanml3d/new_joint_vecs --output preference_motion.jsonl
+python motion_text_score.py --dataset_mapping humanml3d_mapping.json --gt_motion_dir {project_root}/VimoRAG/McDPO/humanml3d/new_joint_vecs --output preference_labels.jsonl
 ```
 
 Make sure you are out of VimoRAG environment
 ```bash
+mv preference_labels.jsonl {project_root}/InstructMotion/preference_data/
 conda deactivate
 cd {project_root}/InstructionMotion
 ```
