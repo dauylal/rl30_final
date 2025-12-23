@@ -1,9 +1,6 @@
 # rl30_final
 
-Download humanml3d and put in VimoRAG/McDPO, it should look like
-```bash
-VimoRAG/McDPO/humanml3d
-```
+
 
 Follow the [VimoRAG](https://github.com/WalkerMitty/VimoRAG) repository to download the environment
 
@@ -11,8 +8,17 @@ Follow the [VimoRAG](https://github.com/WalkerMitty/VimoRAG) repository to downl
 
 ## Stage 0
 Download the humanml3d (ground truth), and our preference dataset.
-[humanml3d]()
+[dataset](https://drive.google.com/file/d/1NAVgcWhnEJRtM__1CUV7mJzb9iXzl-cF/view?usp=sharing)
+[humanml3d](https://drive.google.com/file/d/1_PUxrTur45HfU0_n4oHlTXy-UtaNzdl2/view?usp=sharing)
 
+The file structure should look like
+```bash
+preference_data/
+VimoRAG/
+VimoRAG/McDPO/humanml3d
+InstructMotion/
+
+```
 
 ## Stage 1 (Our models)
 - Download the dataset and models from [HuggingFace](https://huggingface.co/datasets/Haidong2/VimoRAG) (or [ModelScope](https://modelscope.cn/models/Walkerhai/VimoRAG)) and put them in ``data/``
