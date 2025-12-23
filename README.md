@@ -6,6 +6,11 @@ Follow the [VimoRAG](https://github.com/WalkerMitty/VimoRAG) repository to downl
 
 # Dataset and Models
 
+Visit project root
+```bash
+cd final_project/
+```
+
 ## Stage 0
 Download the humanml3d (ground truth), and our preference dataset.
 [dataset](https://drive.google.com/file/d/1NAVgcWhnEJRtM__1CUV7mJzb9iXzl-cF/view?usp=sharing)
