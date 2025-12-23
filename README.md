@@ -87,11 +87,26 @@ To train the DPO model, modify the hyperparameters and paths in `src/scripts/dpo
 ```bash
 bash src/scripts/dpo_train.sh
 ```
+```FLIP_RATIO``` represents the probability of swapping the chosen and rejected samples in preference pairs during training
+
+---
+```cd``` into MotionGPT first.
+
+To evaluate without peft
+```
+python test.py --cfg configs/config_h3d_stage3.yaml --task t2m --checkpoint /path/to/trained_model.pt
+```
+
+To evaluate with peft:
+```
+python test.py --cfg configs/config_h3d_stage3.yaml --task t2m --checkpoint /path/to/trained_model.pt --peft --r 8 --lora_alpha 16 --lora_dropout 0.05 
+```
 
 
 ## Acknowledgements
 
 - [VimoRAG](https://github.com/WalkerMitty/VimoRAG)
+- [InstructMotion](https://github.com/THU-LYJ-Lab/InstructMotion)
 - [MotionGPT](https://github.com/qiqiApink/MotionGPT)
 - [InternVideo](https://github.com/OpenGVLab/InternVideo)
 - [VideoGPT-plus](https://github.com/mbzuai-oryx/VideoGPT-plus)
