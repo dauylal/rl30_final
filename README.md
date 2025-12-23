@@ -16,6 +16,8 @@ The file structure should look like
 unzip preference_data.zip
 unzip humanml3d.zip
 cp -r humanml3d VimoRAG/McDPO/
+
+cd VimoRAG/McDPO
 ```
 
 The file structure should look like
@@ -34,9 +36,9 @@ InstructMotion/
 cd data/VimoRAG
 unzip McDPO.zip
 unzip resources.zip
-mv McDPO/checkpoints /home/michael/code/rl30_final/VimoRAG/McDPO
-mv output /home/michael/code/rl30_final/VimoRAG/
-mv resources /home/michael/code/rl30_final/VimoRAG/
+mv McDPO/checkpoints {project_root}/VimoRAG/McDPO
+mv output {project_root}/VimoRAG/
+mv resources {project_root}/VimoRAG/
 ```
 
 ## Stage 2 (Pretrained models)
@@ -54,6 +56,7 @@ mv resources /home/michael/code/rl30_final/VimoRAG/
 ```
 
 ```bash
+cd {project_root}
 cd VimoRAG/McDPO
 conda env create -f environment.yml
 conda activate mcdpo
@@ -70,7 +73,7 @@ python motion_text_score.py --dataset_mapping humanml3d_mapping.json --gt_motion
 Make sure you are out of VimoRAG environment
 ```bash
 conda deactivate
-cd {root}/InstructionMotion
+cd {project_root}/InstructionMotion
 ```
 
 # Instruction Motion
